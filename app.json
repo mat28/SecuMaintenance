@@ -1,0 +1,19 @@
+{
+    "expo": {
+        "sdkVersion": "23.0.0",
+        "orientation": "portrait",
+        "privacy": "public",
+        "icon": "./app.png",
+        "primaryColor": "#50D2C2",
+        "splash": {
+            "image": "./splash.png",
+            "resizeMode": "cover",
+            "backgroundColor": "#50D2C2"
+        },
+        "androidStatusBarColor": "#50D2C2",
+        "androidStatusBar": {
+            "barStyle": "light-content",
+            "backgroundColor": "#50D2C2"
+        }
+    }
+}
