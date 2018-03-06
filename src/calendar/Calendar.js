@@ -71,22 +71,6 @@ export default class Calendar extends React.Component<ScreenParams<{ datetime: s
                 }
                 </ScrollView>
             </View>
-            <Footer>
-                <FooterTab>
-                    <Button full>
-                        <Icon name="ios-checkmark-circle-outline" />
-                    </Button>
-                    <Button full>
-                        <Icon name="ios-contacts-outline" />
-                    </Button>
-                    <Button full>
-                        <Icon name="ios-time-outline" />
-                    </Button>
-                    <Button full>
-                        <Icon name="ios-alert-outline" />
-                    </Button>
-                </FooterTab>
-            </Footer>
         </BaseContainer>;
     }
 }

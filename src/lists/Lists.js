@@ -3,10 +3,10 @@ import * as _ from "lodash";
 import moment from "moment";
 import autobind from "autobind-decorator";
 import React, {Component} from "react";
-import {StyleSheet, Image, View, Text} from "react-native";
+import {StyleSheet, Image, View, Text,TouchableHighlight} from "react-native";
 import {H1, H3, Button, Icon, Card, CardItem, Thumbnail, Left, Body} from "native-base";
 import {observable, action} from "mobx";
-import {observer} from "mobx-react/native";
+import {observer,inject} from "mobx-react/native";
 
 import ListsStore from "./ListsStore";
 
@@ -14,20 +14,23 @@ import {BaseContainer, Styles, Images} from "../components";
 
 import variables from "../../native-base-theme/variables/commonColor";
 
+@inject("store")
 @observer
 export default class Lists extends Component {
 
-    store = new ListsStore();
+    storeList = new ListsStore();
 
-    go(key: string) {
-        this.props.navigation.navigate(key);
+    go(key: string, params) {
+        this.props.navigation.navigate(key, {key: params});
     }
 
     render(): React$Element<*> {
-        const {tasks, loading} = this.store;
-        return (<BaseContainer title="Aujourd'hui" navigation={this.props.navigation} scrollable>
+        const {navigation, store} = this.props;
+        const {tasks, loading} = this.storeList;
+        return (<BaseContainer title="Aujourd'hui" navigation={navigation} scrollable>
         {
-            !loading && <View>
+            !loading  && <View>
+                <Text note>Intervention(s) à venir {store.overdueTaskCount}</Text>
                 {/*<Image source={Images.lists} style={Styles.header}>
                     <View style={[Styles.center, Styles.flexGrow, Styles.headerMask]}>
                         <H1 style={{ color: "white" }}>Task List</H1>
@@ -46,9 +49,9 @@ export default class Lists extends Component {
                             title={item.title}
                             time={item.time}
                             image={item.imageURL}
-                            distance={"test"}
+                            distance={"7,8km"}
                             onToggle={done => this.store.toggleItem(key, done)}
-                            onPress={() => this.go()}
+                            onPress={() => this.go('ListsDetail',key)}
                         />
                     )
                 }
@@ -67,7 +70,8 @@ class Item extends Component {
         onToggle: boolean => void,
         time: string,
         distance : string,
-        imageURL : string
+        imageURL : string,
+        key: string
     }
 
     @observable done: boolean;
@@ -87,9 +91,9 @@ class Item extends Component {
     }
 
     render(): React$Element<*>  {
-        const {title} = this.props;
+        const {title, distance, time, onPress} = this.props;
         const btnStyle ={ backgroundColor: this.done ? variables.brandInfo : variables.lightGray };
-        return (<View style={Styles.listItem}>
+        return (<TouchableHighlight onPress={onPress}><View style={Styles.listItem}>
             {/*<Button transparent
                     onPress={this.toggle}
                     style={StyleSheet.flatten([Styles.center, style.button, btnStyle])}>
@@ -104,13 +108,13 @@ class Item extends Component {
                   <Thumbnail square source={{uri: "https://transvosges.files.wordpress.com/2016/02/dsc08012.jpg"}} />
                   <Body>
                     <H3>{title}</H3>
-                    <Text note> <Icon name="md-time" style={{ color: "#3F51B5", fontSize:"13px" }} /> test </Text>
-                    <Text note> <Icon name="ios-pin" style={{ color: "#3F51B5", fontSize:"13px"  }} /> 7,8km </Text>
+                    <Text note> <Icon name="md-time" style={{ color: "#3F51B5", fontSize:13 }} /> {moment(time).format("LT")} </Text>
+                    <Text note> <Icon name="ios-pin" style={{ color: "#3F51B5", fontSize:13  }} /> {distance} </Text>
                   </Body>
                 </Left>
               </CardItem>
             </Card>
-        </View>);
+        </View></TouchableHighlight>);
     }
 }
 

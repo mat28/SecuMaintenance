@@ -13,3 +13,5 @@ export {default as WindowDimensions} from "./WindowDimensions";
 export {default as Firebase} from "./Firebase";
 export {default as LoadingIndicator} from "./LoadingIndicator";
 export {default as Container} from "./Container";
+export {default as SwipePhone} from "./SwipePhone";
+export {default as Badge} from "./Badge";

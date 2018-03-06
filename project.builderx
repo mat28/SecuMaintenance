@@ -1,0 +1,16 @@
+{
+    "artboards": [
+        "/src/artboards/Untitled.js",
+        "/src/artboards/Untitled1.js"
+    ],
+    "symbols": [],
+    "assets": [],
+    "defaultArtboardDirectory": "/src/artboards",
+    "defaultSymbolDirectory": "/src/symbols",
+    "defaultAssetDirectory": "/src/assets",
+    "deviceName": "iPhone X",
+    "deviceOrientation": "portrait",
+    "basePath": "/Users/rxmat/Documents/lunc/secuMaintenance",
+    "tempPath": "/var/folders/7f/skxgq51x6zz8d2_2b8rk5hww0000gn/T/BuilderLJe6b4l",
+    "useStylesheet": true
+}

@@ -52,7 +52,7 @@ export default {
   segmentActiveTextColor: '#3F51B5',
   segmentBorderColor: '#fff',
   segmentBorderColorMain: '#3F51B5',
-  
+
     // New Variable
   get defaultTextColor() {
     return this.textColor;
@@ -114,16 +114,16 @@ export default {
 
 
     // Card
-  cardDefaultBg: '#fff',
+  //cardDefaultBg: '#fff',
 
 
       // Color
-  brandPrimary: '#6563A4',
+  brandPrimary: '#3F51B5',
   brandInfo: '#50D2C2',
   brandSecondary: '#D667CE',
-  brandSuccess: '#5cb85c',
-  brandDanger: '#d9534f',
-  brandWarning: '#f0ad4e',
+  brandSuccess: '#4CAF50',
+  brandDanger: '#F44336',
+  brandWarning: '#FF9800',
   brandSidebar: '#252932',
   white,
   black,
@@ -224,13 +224,13 @@ export default {
 
 
     // List
-  listBorderColor: '#c9c9c9',
-  listDividerBg: lightGray,
+  //listBorderColor: '#c9c9c9',
+  //listDividerBg: lightGray,
   listItemHeight: 45,
   listBtnUnderlayColor: '#DDD',
 
     // Card
-  cardBorderColor: '#ccc',
+  //cardBorderColor: '#ccc',
 
     // Changed Variable
   listItemPadding: (platform === 'ios') ? 10 : 12,

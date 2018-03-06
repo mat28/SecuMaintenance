@@ -1,19 +1,35 @@
 {
-    "expo": {
-        "sdkVersion": "23.0.0",
-        "orientation": "portrait",
-        "privacy": "public",
-        "icon": "./app.png",
-        "primaryColor": "#50D2C2",
-        "splash": {
-            "image": "./splash.png",
-            "resizeMode": "cover",
-            "backgroundColor": "#50D2C2"
-        },
-        "androidStatusBarColor": "#50D2C2",
-        "androidStatusBar": {
-            "barStyle": "light-content",
-            "backgroundColor": "#50D2C2"
-        }
+  "expo": {
+    "sdkVersion": "23.0.0",
+    "orientation": "portrait",
+    "privacy": "public",
+    "icon": "./app.png",
+    "primaryColor": "#50D2C2",
+    "splash": {
+      "image": "./splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#50D2C2"
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#50D2C2"
+    },
+    "ios": {
+      "bundleIdentifier": "org.react.js.native.lunc.secuMaintenance",
+      "publishBundlePath": "ios/secumaintenance/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/secumaintenance/Supporting/shell-app-manifest.json"
+    },
+    "android": {
+      "package": "org.react.js.native.lunc.secuMaintenance"
+    },
+    "name": "secuMaintenance",
+    "slug": "secuMaintenance",
+    "version": "1.2.0",
+    "isDetached": true,
+    "detach": {
+      "scheme": "expd587c400aaed444bb4d8a6e4af2d2c23",
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.1.4-sdk23.0.0-f67c5bc3-4a27-40f6-8686-91e8f868a145.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.1.2-sdk23.0.0-d47f172b-1ed3-4c8f-9e48-239052c678b6.tar.gz"
     }
+  }
 }

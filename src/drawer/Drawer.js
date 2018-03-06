@@ -2,7 +2,7 @@
 import autobind from "autobind-decorator";
 import * as React from "react";
 import {View, StyleSheet, Image, TouchableOpacity, SafeAreaView} from "react-native";
-import {Button, H1, Icon, Header, Left, Right, Text} from "native-base";
+import {Button, H1, Icon, Header, Left, Right, Text, List, ListItem} from "native-base";
 
 import {Avatar, Images, Firebase, WindowDimensions, Styles} from "../components";
 
@@ -35,7 +35,7 @@ export default class Drawer extends React.Component<NavigationProps<>> {
         const navState = this.props.navigation.state;
         const currentIndex = navState.index;
         const items = navState.routes
-            .filter(route => ["Settings", "Create"].indexOf(route.key) === -1)
+            .filter(route => ["Settings", "Create", "Lists", "Maps", "ListsDetail", "Profile", "Groups", "Overview", "Timeline"].indexOf(route.key) === -1)
             .map((route, i) =>
                 <DrawerItem key={i} onPress={() => this.go(route.key)} label={route.key} active={currentIndex === i} />
             );
@@ -57,9 +57,9 @@ export default class Drawer extends React.Component<NavigationProps<>> {
                                     <Avatar size={50} style={{ marginTop: 12 }} />
                                 </Button>
                             </Right>
-                    </Header>
-                    <View style={style.drawerItemsContainer}>
-                        <View style={style.drawerItems}>{items}</View>
+                        </Header>
+                    <View >
+                        <List>{items}</List>
                     </View>
                     <View style={style.row}>
                         <DrawerIcon label="settings" icon="ios-settings-outline" onPress={() => this.go("Settings")} />
@@ -81,9 +81,10 @@ type DrawerItemProps = {
 class DrawerItem extends React.Component<DrawerItemProps> {
     render(): React.Element<React.ComponentType<Button>> {
         const {label, onPress, active} = this.props;
-        return <Button onPress={onPress} full transparent>
+        return (<ListItem>
+          <Button onPress={onPress} full transparent>
             <H1 style={{ color: active ? "white" : "rgba(255, 255, 255, .5)" }}>{label}</H1>
-        </Button>;
+        </Button></ListItem>);
     }
 }
 
@@ -97,7 +98,7 @@ class DrawerIcon extends React.Component<DrawerIconProps> {
     render(): React.Element<React.ComponentType<Button>> {
         const {label, icon, onPress} = this.props;
         return <TouchableOpacity style={style.drawerIcon} onPress={onPress}>
-            <Icon name={icon} style={{ color: "rgba(255, 255, 255, .5)", padding: variables.contentPadding }} />
+            <Icon name={icon} style={{ color: "rgba(255, 255, 255, .5)" }} />
             <Text style={{ color: "white", fontSize: 12 }}>{label.toUpperCase()}</Text>
         </TouchableOpacity>;
     }
@@ -134,7 +135,7 @@ const style = StyleSheet.create({
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: variables.contentPadding * 6
+        paddingVertical: variables.contentPadding * 1
     },
     drawerItems: {
         flex: 1,

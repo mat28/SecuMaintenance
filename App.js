@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import * as React from "react";
 import {Dimensions} from "react-native";
-import {StyleProvider} from "native-base";
+import {StyleProvider, Icon, Button} from "native-base";
 import {StackNavigator, DrawerNavigator} from "react-navigation";
 import {Font, AppLoading} from "expo";
 import {useStrict, observable, computed} from "mobx";
@@ -12,7 +12,6 @@ import {Images, Firebase} from "./src/components";
 import {Login} from "./src/login";
 import {SignUp} from "./src/sign-up";
 import {ForgotPassword} from "./src/forgot-password";
-import {Walkthrough} from "./src/walkthrough";
 import {Drawer} from "./src/drawer";
 import {Home} from "./src/home";
 import {Calendar} from "./src/calendar";
@@ -22,11 +21,16 @@ import {Lists} from "./src/lists";
 import {Profile} from "./src/profile";
 import {Timeline} from "./src/timeline";
 import {Settings} from "./src/settings";
+import {Map} from "./src/maps";
+import {ListsDetail} from './src/listsdetail';
 import {Create} from "./src/create";
 import MainStore from "./src/MainStore";
 
 import getTheme from "./native-base-theme/components";
 import variables from "./native-base-theme/variables/commonColor";
+
+import DevTools from 'mobx-react-devtools';
+
 
 @observer
 export default class App extends React.Component<{}> {
@@ -101,10 +105,12 @@ const MainNavigator = DrawerNavigator({
     Overview: { screen: Overview },
     Groups: { screen: Groups },
     Lists: { screen: Lists },
+    Maps: { screen: Map },
     Profile: { screen: Profile },
     Timeline: { screen: Timeline },
     Settings: { screen: Settings },
-    Create: { screen: Create }
+    Create: { screen: Create },
+    ListsDetail : {screen : ListsDetail}
 }, {
     drawerWidth: Dimensions.get("window").width,
     contentComponent: Drawer

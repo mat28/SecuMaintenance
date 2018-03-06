@@ -18,12 +18,14 @@ export default class Firebase {
     static database: firebase.database.Database;
     static auth: firebase.auth.Auth;
     static storage: firebase.storage.Storage;
+    static messaging : firebase.messaging.Messaging;
 
     static init() {
         firebase.initializeApp(config);
         Firebase.auth = firebase.auth();
         Firebase.database = firebase.database();
         Firebase.storage = firebase.storage();
+        //Firebase.messaging = firebase.messaging();
     }
 
     static get userRef(): firebase.database.Reference {

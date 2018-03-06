@@ -21,6 +21,14 @@ export default class ListsStore {
             .then(() => this.loading = false);
     }
 
+    get overdueTaskCount(): number {
+        const now = (new Date()).getTime() / 1000;
+        return this.tasks ? _.map(this.tasks || {}, task => task)
+                .filter(task => !task.done)
+                .filter(task => task.time <= now).length
+            : 0;
+    }
+
     toggleItem(key: string, done: boolean) {
         Firebase.userRef.child(`tasks/${key}/done`).set(done);
     }

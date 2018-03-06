@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import {Button, Header as NBHeader, Left, Body, Title, Right, Icon, Content} from "native-base";
+import {Button, Header as NBHeader, Left, Body, Title, Right, Icon, Content, Fab} from "native-base";
 import { EvilIcons } from "@expo/vector-icons";
 
 import Container from "./Container"
@@ -19,7 +19,7 @@ export default class BaseContainer extends React.Component<BaseContainerProps> {
     render(): React.Node {
         const {title, navigation, scrollable, footer, safe, bottomColor} = this.props;
         return <Container {...{safe, bottomColor}}>
-                <NBHeader noShadow>
+                <NBHeader noShadow style={{ backgroundColor: "#3F51B5"}}>
                     <Left>
                         <Button onPress={() => navigation.navigate("DrawerOpen")} transparent>
                             <EvilIcons name="navicon" size={32} color={variables.gray} />
@@ -27,13 +27,11 @@ export default class BaseContainer extends React.Component<BaseContainerProps> {
                     </Left>
                     <Body>
                     {
-                        typeof(title) === "string" ? <Title>{title}</Title> : title
+                        typeof(title) === "string" ? <Title style={{color: "#FFFFFF"}}>{title}</Title> : title
                     }
                     </Body>
                     <Right style={{ alignItems: "center" }}>
-                        <Button transparent onPress={() => navigation.navigate("Create")}>
-                            <Icon name="ios-add-outline" style={{ color: variables.gray, fontSize: 50 }} />
-                        </Button>
+
                     </Right>
                 </NBHeader>
                 {

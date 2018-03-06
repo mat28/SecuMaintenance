@@ -21,10 +21,6 @@ type Participants extends Participant[] {}
 type Contacts extends Contact[] {}
 
 
-type Report {
-
-}
-
 type Geoloc {
   lat : String,
   lng : String

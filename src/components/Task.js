@@ -5,7 +5,7 @@ import * as React from "react";
 import {View, Text, StyleSheet} from "react-native";
 import {H3} from "native-base";
 
-import {Avatar, Styles, Circle} from "../components";
+import {Avatar, Styles, Badge} from "../components";
 import {Task as ITask} from "../Model";
 
 import variables from "../../native-base-theme/variables/commonColor";
@@ -63,7 +63,7 @@ class TaskStatus extends React.Component<TaskStatusProps> {
             {
                 timeline && <View style={[{ height }, style.verticalLine]}></View>
             }
-            <Circle size={10} color={completed ? variables.brandInfo : variables.brandSecondary}/>
+            <Badge size={10} color={completed ? variables.brandInfo : variables.brandSecondary}/>
         </View>;
     }
 }
