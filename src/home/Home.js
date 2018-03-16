@@ -24,7 +24,7 @@ export default class Home extends React.Component<ScreenProps<> & StoreProps> {
               {
                 store.user &&
                 <View style={[Styles.center, Styles.flexGrow]}>
-                    <Image source={Images.home} style={[StyleSheet.absoluteFill, style.img]} />
+                    <Image source={require("../components/images/home.jpg")} style={[StyleSheet.absoluteFill, style.img]} />
                     <H1>Bonjour {store.user.profile.name} !</H1>
                       <Circle color={variables.brandInfo} size={150} style={style.circle} navigateTo="Lists" {... {navigation}}>
                           <Badge color={variables.brandPrimary} size={30} style={style.badge}>

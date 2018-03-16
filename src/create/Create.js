@@ -56,7 +56,7 @@ export default class Create extends React.Component<ScreenProps<>> {
         return (
             <BaseContainer safe={true} title="Create New" navigation={this.props.navigation} scrollable {...{footer}}>
             <View style={[Styles.center, Styles.header]}>
-                <Image source={Images.lists} style={[StyleSheet.absoluteFill, Styles.header]} />
+                <Image source={require("../components/images/lists.jpg")} style={[StyleSheet.absoluteFill, Styles.header]} />
                 <View style={[StyleSheet.absoluteFill, style.mask]} />
                 <H1 style={{ color: "white" }}>NEW TASK</H1>
             </View>

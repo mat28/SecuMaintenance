@@ -109,7 +109,7 @@ export default class ListsDetail extends Component {
                 />
               </View>
                 <Text note>Intervention(s) à venir {store.overdueTaskCount}</Text>
-                {/*<Image source={Images.lists} style={Styles.header}>
+                {/*<Image source={require("../components/images/lists.jpg")} style={Styles.header}>
                     <View style={[Styles.center, Styles.flexGrow, Styles.headerMask]}>
                         <H1 style={{ color: "white" }}>Task List</H1>
                     </View>

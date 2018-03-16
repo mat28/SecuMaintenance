@@ -69,7 +69,7 @@ export default class SignUp extends React.Component<ScreenProps<>> {
                         <Right/>
                     </Header>
                     <View>
-                        <Image source={Images.signUp} resizeMode="cover" style={style.img} />
+                        <Image source={require("../components/images/signUp.jpg")} resizeMode="cover" style={style.img} />
                         <View style={[StyleSheet.absoluteFill, Styles.imgMask, Styles.center]}>
                             <View style={style.circle}>
                                 <Icon name="ios-add-outline" style={{fontSize: 75, color: variables.brandInfo }} />

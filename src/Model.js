@@ -5,9 +5,6 @@ export type ListItems = { [string]:  ListItem };
 export type Participants = { [string]:  Participant };
 export type Contacts = { [string]:  Contact };
 
-export interface Report extends Any {
-}
-
 export interface Geoloc {
   lat: string,
   lng: string,
@@ -34,6 +31,7 @@ export interface Contact {
 
 export interface User {
   profile: Profile,
+  lists: Lists,
   tasks: Tasks,
 }
 
@@ -56,7 +54,7 @@ export interface List {
 
 export interface ListItem {
   title: string,
-  done: boolean, 
+  done: boolean,
 }
 
 export interface Task {
@@ -65,9 +63,9 @@ export interface Task {
   date: string,
   imageURL: string,
   done: boolean,
-  lists: Lists
 }
 
 export interface Participant {
   uid: string,
 }
+

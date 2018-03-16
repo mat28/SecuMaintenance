@@ -35,7 +35,7 @@ export default class ForgotPassword extends React.Component<ScreenProps<>> {
     render(): React.Node {
         return (
             <View style={Styles.flexGrow}>
-                <Image source={Images.login} resizeMode="cover" style={style.img} />
+                <Image source={require("../components/images/login.jpg")} resizeMode="cover" style={style.img} />
                 <View style={[StyleSheet.absoluteFill, Styles.imgMask]} />
                 <View style={style.container}>
                     <Field

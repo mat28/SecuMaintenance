@@ -1,43 +1,44 @@
 // @flow
-import {Asset} from "expo";
+import {Image}  from "react-native";
+import base64 from 'base-64';
 
 export default class Images {
 
-    static login = require("./login.jpg");
-    static signUp = require("./signUp.jpg");
-    static drawer = require("./drawer.jpg");
-    static home = require("./home.jpg");
-    static lists = require("./lists.jpg");
-    static timeline = require("./timeline.jpg");
+    //static login = base64.encode('./login.jpg');
+    /*static signUp = "./signUp.jpg";
+    static drawer = "./drawer.jpg";
+    static home = "./home.jpg";
+    static lists = "./lists.jpg";
+    static timeline = "./timeline.jpg";
 
-    static defaultAvatar = require("./avatars/default-avatar.jpg");
-    static avatar1 = require("./avatars/avatar-1.jpg");
-    static avatar2 = require("./avatars/avatar-2.jpg");
-    static avatar3 = require("./avatars/avatar-3.jpg");
+    static defaultAvatar = "./avatars/default-avatar.jpg";
+    static avatar1 = "./avatars/avatar-1.jpg";
+    static avatar2 = "./avatars/avatar-2.jpg";
+    static avatar3 = "./avatars/avatar-3.jpg";
 
-    static foodGroup = require("./groups/food.jpg");
-    static workGroup = require("./groups/work.jpg");
-    static vacationGroup = require("./groups/vacation.jpg");
-    static citiesGroup = require("./groups/cities.jpg");
+    static foodGroup = "./groups/food.jpg";
+    static workGroup = "./groups/work.jpg";
+    static vacationGroup = "./groups/vacation.jpg";
+    static citiesGroup = "./groups/cities.jpg";*/
 
     static downloadAsync(): Promise<*>[] {
         return [
-            Asset.fromModule(Images.login).downloadAsync(),
-            Asset.fromModule(Images.signUp).downloadAsync(),
-            Asset.fromModule(Images.drawer).downloadAsync(),
-            Asset.fromModule(Images.home).downloadAsync(),
-            Asset.fromModule(Images.lists).downloadAsync(),
-            Asset.fromModule(Images.timeline).downloadAsync(),
+            //Image.prefetch(Images.login),
+            /*Image.prefetch(Images.signUp),
+            Image.prefetch(Images.drawer),
+            Image.prefetch(Images.home),
+            Image.prefetch(Images.lists),
+            Image.prefetch(Images.timeline),
 
-            Asset.fromModule(Images.defaultAvatar).downloadAsync(),
-            Asset.fromModule(Images.avatar1).downloadAsync(),
-            Asset.fromModule(Images.avatar2).downloadAsync(),
-            Asset.fromModule(Images.avatar3).downloadAsync(),
+            Image.prefetch(Images.defaultAvatar),
+            Image.prefetch(Images.avatar1),
+            Image.prefetch(Images.avatar2),
+            Image.prefetch(Images.avatar3),
 
-            Asset.fromModule(Images.foodGroup).downloadAsync(),
-            Asset.fromModule(Images.workGroup).downloadAsync(),
-            Asset.fromModule(Images.vacationGroup).downloadAsync(),
-            Asset.fromModule(Images.citiesGroup).downloadAsync()
+            Image.prefetch(Images.foodGroup),
+            Image.prefetch(Images.workGroup),
+            Image.prefetch(Images.vacationGroup),
+            Image.prefetch(Images.citiesGroup),*/
         ];
     }
 }

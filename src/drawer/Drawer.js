@@ -42,7 +42,7 @@ export default class Drawer extends React.Component<NavigationProps<>> {
         //
         return (
             <View style={Styles.flexGrow}>
-                <Image source={Images.drawer} style={[StyleSheet.absoluteFill, style.img]} />
+                <Image source={require("../components/images/drawer.jpg")} style={[StyleSheet.absoluteFill, style.img]} />
                 <View style={[StyleSheet.absoluteFill, style.background]} />
                 <SafeAreaView style={StyleSheet.absoluteFill}>
                     <View style={style.container}>

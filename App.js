@@ -1,12 +1,12 @@
 // @flow
 /* eslint-disable no-console */
 import * as React from "react";
-import {Dimensions} from "react-native";
+//import { Provider } from 'react-redux';
+import {Dimensions, StyleSheet} from "react-native";
 import {StyleProvider, Icon, Button} from "native-base";
 import {StackNavigator, DrawerNavigator} from "react-navigation";
-import {Font, AppLoading} from "expo";
-import {useStrict, observable, computed} from "mobx";
-import {observer, Provider} from "mobx-react/native";
+import {useStrict, observable, computed, Provider} from "mobx";
+import {observer} from "mobx-react/native";
 
 import {Images, Firebase} from "./src/components";
 import {Login} from "./src/login";
@@ -21,15 +21,18 @@ import {Lists} from "./src/lists";
 import {Profile} from "./src/profile";
 import {Timeline} from "./src/timeline";
 import {Settings} from "./src/settings";
-import {Map} from "./src/maps";
+import {Marker, Maps} from 'react-native-maps';
 import {ListsDetail} from './src/listsdetail';
 import {Create} from "./src/create";
 import MainStore from "./src/MainStore";
 
 import getTheme from "./native-base-theme/components";
 import variables from "./native-base-theme/variables/commonColor";
-
+import GlobalFont from 'react-native-global-font';
 import DevTools from 'mobx-react-devtools';
+import RNFetchBlob from 'react-native-fetch-blob';
+import Spinner from 'react-native-loading-spinner-overlay';
+
 
 
 @observer
@@ -52,12 +55,18 @@ export default class App extends React.Component<{}> {
 
     componentWillMount() {
         const promises = [];
-        promises.push(
-            Font.loadAsync({
+        StyleSheet.create({
+            book : {
+              fontFamily: "Avenir-Book"
+            }
+          });
+            /*Font.loadAsync({
                 "Avenir-Book": require("./fonts/Avenir-Book.ttf"),
                 "Avenir-Light": require("./fonts/Avenir-Light.ttf")
             })
-        );
+            let fontName = 'Avenir-Book';
+            GlobalFont.applyGlobal(fontName);*/
+
         Promise.all(promises.concat(Images.downloadAsync()))
             .then(() => this.ready = true)
             .catch(error => console.error(error))
@@ -87,10 +96,13 @@ export default class App extends React.Component<{}> {
                                 <PrivateNavigator {...{onNavigationStateChange}} />
                         )
                         :
-                        <AppLoading startAsync={null} onError={null} onFinish={null} />
+                        <Spinner
+                        visible={require("./splash.png")}
+                        textContent={"Loading..."}
+                         textStyle={{color: '#50D2C2'}} />
                 }
             </StyleProvider>
-        </Provider>;
+        </Provider>
     }
 }
 

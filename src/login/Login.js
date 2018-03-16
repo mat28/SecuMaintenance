@@ -2,9 +2,8 @@
 import autobind from "autobind-decorator";
 import * as React from "react";
 import {observer} from "mobx-react/native";
-import {View, Image, StyleSheet, SafeAreaView} from "react-native";
+import {View, Image, StyleSheet, SafeAreaView ,NativeModules } from "react-native";
 import {H1, Button, Text, Spinner, Input, Content} from "native-base";
-import {Constants} from "expo";
 
 import LoginStore from "./LoginStore";
 import Mark from "./Mark";
@@ -16,10 +15,11 @@ import type {ScreenProps} from "../components/Types";
 
 import variables from "../../native-base-theme/variables/commonColor";
 
+const { StatusBarManager} = NativeModules;
 @observer
 export default class Login extends React.Component<ScreenProps<>> {
 
-    store = new LoginStore();
+    store =  new LoginStore();
     password: Input;
 
     @autobind
@@ -54,12 +54,12 @@ export default class Login extends React.Component<ScreenProps<>> {
     render(): React.Node {
         return (
             <View style={Styles.flexGrow}>
-                <Image source={Images.login} style={[StyleSheet.absoluteFill, style.img]} />
+                <Image source={require("../components/images/login.jpg")} style={[StyleSheet.absoluteFill, style.img]} />
                 <View style={[StyleSheet.absoluteFill, Styles.imgMask]} />
                 <SafeAreaView style={StyleSheet.absoluteFill}>
                     <Content style={style.content}>
                         <AnimatedView
-                            style={{ height: height - Constants.statusBarHeight, justifyContent: "center" }}
+                            style={{ height: height - StatusBarManager.currentHeight, justifyContent: "center" }}
                         >
                         <View style={style.logo}>
                             <View>

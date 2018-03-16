@@ -1,5 +1,6 @@
 import { Platform } from 'react-native';
 import _ from 'lodash';
+import {GlobalFont} from "react-native-global-font";
 
 import variable from './../variables/platform';
 

@@ -21,7 +21,7 @@ export default class Timeline extends React.Component<ScreenProps<> & StoreProps
         {
             store.user && <View>
                 <View style={[Styles.center, Styles.header]}>
-                    <Image source={Images.lists} style={[StyleSheet.absoluteFill, Styles.header]} />
+                    <Image source={require("../components/images/lists.jpg")} style={[StyleSheet.absoluteFill, Styles.header]} />
                     <View style={[StyleSheet.absoluteFill, style.mask]} />
                     <Text style={Styles.whiteText}>{store.taskCount} TASKS</Text>
                 </View>

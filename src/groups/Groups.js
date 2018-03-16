@@ -12,10 +12,10 @@ import variables from "../../native-base-theme/variables/commonColor";
 export default class Groups extends React.Component<ScreenProps<>> {
     render(): React.Node {
         return <BaseContainer title="Groups" navigation={this.props.navigation} scrollable>
-            <Group title="Food" description="Need to Buy" picture={Images.foodGroup} />
-            <Group title="Work" description="Freelance Projects" picture={Images.workGroup} />
-            <Group title="Vacation" description="Favorite Places" picture={Images.vacationGroup} />
-            <Group title="Cities" description="Want to Visit" picture={Images.citiesGroup} />
+            <Group title="Food" description="Need to Buy" picture={require("../components/images/groups/food.jpg")} />
+            <Group title="Work" description="Freelance Projects" picture={require("../components/images/groups/work.jpg")} />
+            <Group title="Vacation" description="Favorite Places" picture={require("../components/images/groups/vacation.jpg")} />
+            <Group title="Cities" description="Want to Visit" picture={require("../components/images/groups/cities.jpg")} />
         </BaseContainer>;
     }
 }
