@@ -5,8 +5,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+=======
+>>>>>>> 676d6b0d8c473bcb4bf199e0ae32dc4294100e02
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -26,7 +29,10 @@
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
+<<<<<<< HEAD
             <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+=======
+>>>>>>> 676d6b0d8c473bcb4bf199e0ae32dc4294100e02
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
